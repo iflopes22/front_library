@@ -8,6 +8,7 @@ import { ProductCrudComponent } from "./views/product-crud/product-crud.componen
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { StoreComponent } from './components/store/store.component';
 import { ShopComponent } from './components/shop/shop.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 const routes: Routes = [
@@ -38,7 +39,11 @@ const routes: Routes = [
   {
     path: "shop/close/:id",
   component: ShopComponent
-}
+}, 
+  {
+    path: "register",
+  component: RegisterComponent
+  }
     
 ];
 
