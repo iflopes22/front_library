@@ -40,6 +40,7 @@ import { ShopComponent } from './components/shop/shop.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CartComponent } from './components/cart/cart.component';
 import { UserComponent } from './components/user/user.component';
+import { ProductStoreComponent } from './components/product-store/product-store.component';
 
 
 
@@ -65,6 +66,7 @@ registerLocaleData(localePt);
     RegisterComponent,
     CartComponent,
     UserComponent,
+    ProductStoreComponent,
     ],
   imports: [
     BrowserModule,

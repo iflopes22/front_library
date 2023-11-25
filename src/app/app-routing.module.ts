@@ -2,7 +2,7 @@ import { ProductDeleteComponent } from './components/product/product-delete/prod
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-
+import { ProductStoreComponent } from './components/product-store/product-store.component';
 import { HomeComponent } from "./views/home/home.component";
 import { ProductCrudComponent } from "./views/product-crud/product-crud.component";
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
@@ -53,6 +53,10 @@ const routes: Routes = [
   {
     path: "user",
   component: UserComponent
+  },
+  {
+    path: "store/product/:id",
+    component: ProductStoreComponent
   }
 ];
 

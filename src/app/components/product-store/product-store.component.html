@@ -1,0 +1,29 @@
+<a href="#">
+    <div class="livro">
+        <div class="imgContainer">
+            <img src="assets/img/HP.1.jpg" alt="Harry Potter: e a Pedra Filosofal">
+        </div>
+        <div class="info">
+            <h3 class="nomeLivro">{{ product.name }}</h3>
+            <small class="nomeAutor">{{ product.description }}</small>
+            <br>
+            <span class="preco"> R$ {{ product.price}} <s class="promo">69,99</s></span>
+        </div>
+    </div>
+</a>
+
+<button mat-raised-button (click)="voltar()" color="primary">
+    Voltar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>
+
+<button mat-raised-button (click)="addCart(product)">
+    Adicioanr ao Carrinho
+</button>
+
+<button mat-raised-button (click)="buyProduct(product)">
+    Comprar Produto
+</button>
