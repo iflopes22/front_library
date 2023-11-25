@@ -1,0 +1,8 @@
+<div>
+    <h2>Carrinho de Compras</h2>
+    <div *ngFor="let cart of carts">
+      <p>{{ cart.name }} - R$ {{ cart.price }}</p>
+    </div>
+    <hr/>
+    <p>Total: R$ {{ totalCart() }}</p>
+</div>

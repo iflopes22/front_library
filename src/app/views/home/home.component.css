@@ -6,4 +6,32 @@
 
 .home .subtitle {
     font-size: 1.1rem;
+ } /*daqui pra cima meio que nao ta usando */
+
+*{
+    /* padding: 0px; */
+    margin: 0px;
 }
+.mat-card.home {
+    padding: 0;
+}/*aqui sim consegui tirar o padding*/
+
+figure{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  figure img {
+    width: 100%;
+    min-width: 10%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media (min-width: 768px) {
+    figure {
+        flex-wrap: nowrap; /* Remove flex-wrap para que as imagens se empilhem verticalmente em telas menores */
+    }
+  }

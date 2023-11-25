@@ -1,6 +1,7 @@
 .header {
-    display: flex;
     align-items: center;
+    background-color: #fff;
+    border-bottom: 2px solid #333;
 }
 
 .header a {
@@ -11,7 +12,7 @@
 }
 
 .header .logo {
-    max-height: 32px;
+    max-height: 65px;
 }
 
 .header .title-group {
@@ -21,3 +22,16 @@
 .header .title-group i {
     padding-right: 5px;
 }
+
+/*ajustei o carrinho e perfil pra direita*/
+.icon {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+}
+
+/*aqui dei o espaço entre o carrinho e o botao de perfil*/
+.icon > div:first-child {
+    margin-right: 10px;
+}
+

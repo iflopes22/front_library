@@ -1,12 +1,19 @@
 .footer {
     position: fixed;
     bottom: 0;
-
     display: flex;
     justify-content: flex-end;
+}
+
+.span {
+    margin-right: 8px;
 }
 
 .footer > span {
     font-size: 1.1rem;
     font-weight: 300;
+}
+
+img {
+    max-height: 45px;
 }

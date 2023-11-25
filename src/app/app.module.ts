@@ -38,6 +38,9 @@ import { ProductDeleteComponent } from './components/product/product-delete/prod
 import { StoreComponent } from './components/store/store.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { RegisterComponent } from './components/register/register.component';
+import { CartComponent } from './components/cart/cart.component';
+import { UserComponent } from './components/user/user.component';
+
 
 
 registerLocaleData(localePt);
@@ -60,6 +63,8 @@ registerLocaleData(localePt);
     StoreComponent,
     ShopComponent,
     RegisterComponent,
+    CartComponent,
+    UserComponent,
     ],
   imports: [
     BrowserModule,
