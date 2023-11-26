@@ -9,28 +9,63 @@
 
 hr {
   width: 50%;
+  
 }
-
 
 label {
   font-family: 'Open Sans', sans-serif; 
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input {
+  border-radius: 20px;
+  padding: 1.5%;
 }
 
 button {
   font-family: Calibri, Arial, sans-serif;
   font-weight: bold;
   font-size: 125%;
+  padding: 3px 10px;
+  border-radius: 20px;
+  width: 120px;
+  margin: 10px auto;
+  display: block;
+  transition: background-color 0.1s ease; /*:active*/
 }
+
+/*da pra tirar*/
+button:active {
+  background-color: #fafa30;
+}
+
+/* button:hover {
+  background-color: #2980b9;
+} */
+
+
 
 p {
   font-family: Verdana, Arial, sans-serif;
+  padding: 1%;
+  margin-top: 2.5%;
 }
 
 a {
   font-family: Verdana, Geneva, Tahoma, sans-serif ;
   font-size: 120%;
+  /* color: #34495e; */
   text-decoration: none;
-  color: inherit;
+  border: 2px solid #3498db;
+  border-radius: 15px;
+  padding: 1px; 
+  padding-right: 5px;
+}
+
+/*só pra mudar a cor do texto do botão por conta do angular*/
+a[_ngcontent-ypy-c143] {
+  color: #34495e;
 }
 
 div {
@@ -43,9 +78,6 @@ form {
   max-width: 300px;
 }
 
-label {
-  margin-top: 10px;
-}
 
 h2{
   font-size: 2em;

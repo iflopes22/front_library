@@ -2,13 +2,13 @@
     <h2>Fazer login</h2>
     <hr/>
     <form (ngSubmit)="login()" class="form-login">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" [(ngModel)]="email" required>
+      <label for="email">EMAIL</label>
+      <input type="email" id="email" name="email" [(ngModel)]="email" required placeholder="exemplo@email.com">
   
-      <label for="senha">Senha:</label>
-      <input type="password" id="senha" name="senha" [(ngModel)]="senha" required>
+      <label for="senha">SENHA</label>
+      <input type="password" id="senha" name="senha" [(ngModel)]="senha" required placeholder="Insira sua senha">
   
-      <button type="submit">Entrar</button>
+      <button type="submit">ENTRAR</button>
     </form>
     <p>Ainda não possui cadastro? <a href="#">Cadastre-se</a></p>
 
