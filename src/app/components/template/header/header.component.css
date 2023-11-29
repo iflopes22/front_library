@@ -31,7 +31,6 @@
 }
 
 /*aqui dei o espaço entre o carrinho e o botao de perfil*/
-.icon > div:first-child {
+.icon>div:first-child {
     margin-right: 10px;
 }
-

@@ -30,7 +30,7 @@ button {
   padding: 3px 10px;
   border-radius: 20px;
   width: 120px;
-  margin: 10px auto;
+  margin: 25px auto;
   display: block;
   transition: background-color 0.1s ease; /*:active*/
 }
