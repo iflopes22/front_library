@@ -37,7 +37,7 @@ button {
 
 /*da pra tirar*/
 button:active {
-  background-color: #fafa30;
+  background-color: #3498db;
 }
 
 /* button:hover {
