@@ -1,61 +1,29 @@
-<div class="mat-elevation-z4">
-  <table mat-table [dataSource]="registers">
-    <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef>Id</th>
-      <td mat-cell *matCellDef="let row">{{row.id}}</td>
-    </ng-container>
+<div class="main">
+  <h2>CADASTRO</h2>
+ 
+  <form action="" class="form-login">
+    <label for="nome">NOME</label>
+    <input type="nome" [(ngModel)]="register.name" required placeholder="Guilherme Machado">
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let row">{{row.name}}</td>
-    </ng-container>
+    <label for="email">E-mail</label>
+    <input type="email" [(ngModel)]="register.email" required placeholder="exemplo@gmail.com">
 
-          <!-- Name Column -->
-    <ng-container matColumnDef="cpf">
-    <th mat-header-cell *matHeaderCellDef>CPF</th>
-    <td mat-cell *matCellDef="let row">{{row.cpf}}</td>
-    </ng-container>      
+    <label for="conf.email">Confirmar E-mail</label>
+    <input type="email"required placeholder="exemplo@gmail.com">
 
-    <!-- Price Column -->
-    <ng-container matColumnDef="tel">
-      <th mat-header-cell *matHeaderCellDef>Telefone</th>
-      <td mat-cell *matCellDef="let row">{{ row.tel }}</td>
-    </ng-container>
+    <label for="senha">Senha</label>
+    <input type="senha" [(ngModel)]="register.senha" required placeholder="Insira sua senha">
 
-    <ng-container matColumnDef="endereco">
-      <th mat-header-cell *matHeaderCellDef>Endereço</th>
-      <td mat-cell *matCellDef="let row">{{ row.endereco }}</td>
-    </ng-container>
+    <label for="conf.senha">Confirmar Senha</label>
+    <input type="conf.senha" required placeholder="Insira sua senha">
 
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef>E-mail</th>
-      <td mat-cell *matCellDef="let row">{{ row.email }}</td>
-    </ng-container>
+    <P class="lgpd">Ao clicar em 'Criar Conta', você concorda com nossa política de privacidade e o uso responsável de seus dados pessoais conforme a LGPD.</P>
 
-    <ng-container matColumnDef="senha">
-      <th mat-header-cell *matHeaderCellDef>Senha</th>
-      <td mat-cell *matCellDef="let row">{{ row.senha }}</td>
-    </ng-container>
-    <!-- Action Column -->
-    <!--<ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef>Ações</th>
-      <td mat-cell *matCellDef="let row">
-          <a routerLink="/products/update/{{ row.id }}" class="edit">
-              <i class="material-icons">
-                  edit
-              </i>
-          </a>
-          <a routerLink="/products/delete/{{ row.id }}" class="delete">
-              <i class="material-icons">
-                  delete
-              </i>
-          </a>
-      </td>
-    </ng-container>
-  -->
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+    <button type="submit">CRIAR CONTA</button>
+
+
+  </form>
+  <p>Você já tem uma conta? <a href="http://localhost:4200/user">Fazer login</a></p>
+
+  <!-- <div class="mensagem" NgIf="existeMensagem">   <p>{{ mensagem }}</p> </div> -->
 </div>

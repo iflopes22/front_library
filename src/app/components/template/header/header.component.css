@@ -2,6 +2,10 @@
     align-items: center;
     background-color: #fff;
     border-bottom: 2px solid #333;
+    position: fixed; /* Torna a barra de navegação fixa */
+    top: 0; /* Coloca no topo */
+    width: 100%; /* Ocupa toda a largura */
+    z-index: 1000; /* Define a ordem de empilhamento para garantir que fique acima do restante do conteúdo */
 }
 
 .header a {
