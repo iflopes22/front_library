@@ -9,17 +9,17 @@
     <input type="email" [(ngModel)]="register.email" required placeholder="exemplo@gmail.com">
 
     <label for="conf.email">Confirmar E-mail</label>
-    <input type="email"required placeholder="exemplo@gmail.com">
+    <input type="email" [(ngModel)]="confEmail" required placeholder="exemplo@gmail.com">
 
     <label for="senha">Senha</label>
     <input type="senha" [(ngModel)]="register.senha" required placeholder="Insira sua senha">
 
     <label for="conf.senha">Confirmar Senha</label>
-    <input type="conf.senha" required placeholder="Insira sua senha">
+    <input type="conf.senha" [(ngModel)]="confSenha" required placeholder="Insira sua senha">
 
     <P class="lgpd">Ao clicar em 'Criar Conta', você concorda com nossa política de privacidade e o uso responsável de seus dados pessoais conforme a LGPD.</P>
 
-    <button type="submit">CRIAR CONTA</button>
+    <button type="submit" (click)="createUser()">CRIAR CONTA</button>
 
 
   </form>

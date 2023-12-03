@@ -9,6 +9,7 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class RegisterService {
+    // ALTERAR A PORTA P BATER NO
   baseUrl = "http://localhost:3001/register";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
@@ -23,6 +24,7 @@ export class RegisterService {
   }
 
   create(register: Register): Observable<Register> {
+    //return this.http.post<Register>(`${this.baseUrl}/save`, register);
     return this.http.post<Register>(this.baseUrl, register).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -30,6 +32,7 @@ export class RegisterService {
   }
 
   read(): Observable<Register[]> {
+    //return this.http.get<Registert[]>(`${this.baseUrl}/listAll`);
     return this.http.get<Register[]>(this.baseUrl).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -37,6 +40,7 @@ export class RegisterService {
   }
 
   readById(id: number): Observable<Register> {
+    //return this.http.get<Register>(`${this.baseUrl}/getById/${id}`);
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<Register>(url).pipe(
       map((obj) => obj),
@@ -45,6 +49,7 @@ export class RegisterService {
   }
 
   update(register: Register): Observable<Register> {
+    //return this.http.put<Register>(`${this.baseUrl}/update/${register.id}`, register);
     const url = `${this.baseUrl}/${register.id}`;
     return this.http.put<Register>(url, register).pipe(
       map((obj) => obj),
@@ -53,6 +58,7 @@ export class RegisterService {
   }
 
   delete(id: number): Observable<Register> {
+    //return this.http.delete<Register>(`${this.baseUrl}/delete/${id}`);
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<Register>(url).pipe(
       map((obj) => obj),

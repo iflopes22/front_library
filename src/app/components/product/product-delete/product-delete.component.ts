@@ -22,8 +22,21 @@ export class ProductDeleteComponent implements OnInit {
     this.productService.readById(id).subscribe((product) => {
       this.product = product;
     });
+
+    /*const id = +this.route.snapshot.paramMap.get("id");
+    this.productService.readById(id).subscribe((response) => {
+      this.product = response;
+    });
+    }*/
   }
 
+    /*const id = +this.route.snapshot.paramMap.get("id");
+    this.productService.delete(this.product.id).subscribe((response) => {
+      this.productService.showMessage("Produto excluido com sucesso!");
+      this.router.navigate(["/products"]);
+    });
+    }*/
+  
   deleteProduct(): void {
     this.productService.delete(this.product.id).subscribe(() => {
       this.productService.showMessage("Produto excluido com sucesso!");

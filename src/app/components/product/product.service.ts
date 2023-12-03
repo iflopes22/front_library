@@ -9,6 +9,7 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class ProductService {
+  // ALTERAR A PORTA P BATER NO
   baseUrl = "http://localhost:3001/products";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
@@ -23,6 +24,7 @@ export class ProductService {
   }
 
   create(product: Product): Observable<Product> {
+    //return this.http.post<Product>(`${this.baseUrl}/save`, product);
     return this.http.post<Product>(this.baseUrl, product).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -30,6 +32,7 @@ export class ProductService {
   }
 
   read(): Observable<Product[]> {
+    //return this.http.get<Product[]>(`${this.baseUrl}/listAll`);
     return this.http.get<Product[]>(this.baseUrl).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -37,6 +40,7 @@ export class ProductService {
   }
 
   readById(id: number): Observable<Product> {
+    //return this.http.get<Product>(`${this.baseUrl}/getById/${id}`);
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<Product>(url).pipe(
       map((obj) => obj),
@@ -45,6 +49,7 @@ export class ProductService {
   }
 
   update(product: Product): Observable<Product> {
+    //return this.http.put<Product>(`${this.baseUrl}/update/{product.id}`, product);
     const url = `${this.baseUrl}/${product.id}`;
     return this.http.put<Product>(url, product).pipe(
       map((obj) => obj),
@@ -53,6 +58,7 @@ export class ProductService {
   }
 
   delete(id: number): Observable<Product> {
+    //return this.http.delete<Product>(`${this.baseUrl}/delete`, product);
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<Product>(url).pipe(
       map((obj) => obj),

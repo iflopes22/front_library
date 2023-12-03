@@ -9,7 +9,7 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class CartService {
-  baseUrl = "http://localhost:3001/products";
+  baseUrl = "http://localhost:3001/cart";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
@@ -22,8 +22,8 @@ export class CartService {
     });
   }
 
-  create(product: Cart): Observable<Cart> {
-    return this.http.post<Cart>(this.baseUrl, product).pipe(
+  create(cart: Cart): Observable<Cart> {
+    return this.http.post<Cart>(this.baseUrl, cart).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
@@ -44,9 +44,9 @@ export class CartService {
     );
   }
 
-  update(product: Cart): Observable<Cart> {
-    const url = `${this.baseUrl}/${product.id}`;
-    return this.http.put<Cart>(url, product).pipe(
+  update(cart: Cart): Observable<Cart> {
+    const url = `${this.baseUrl}/${cart.id}`;
+    return this.http.put<Cart>(url, cart).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );

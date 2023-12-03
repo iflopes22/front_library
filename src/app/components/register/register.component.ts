@@ -16,21 +16,45 @@ export class RegisterComponent implements OnInit {
     senha: '',
     email: ''
   }
-  displayedColumns = ['id', 'name', 'cpf', 'tel', 'endereco', 'email', 'senha']
+  confEmail: ''
+  confSenha: ''
+
+  displayedColumns = ['id', 'name', 'email', 'senha']
   
   constructor(private registerService: RegisterService, 
     private router: Router) { }
 
   ngOnInit(): void {
+/*
+    this.registerService.read().subscribe((response) => {
+      this.registers = response;
+    });
+    }*/
+
     this.registerService.read().subscribe(registers => {
       this.registers = registers
     })
   }
 
   createUser(): void {
+    if(this.confEmail != this.register.email) {
+      this.registerService.showMessage("O campo E-mail e Confirmação de E-mail não correspondem.");
+    }
+
+    if(this.confSenha != this.register.senha) {
+      this.registerService.showMessage("O campo Senha e confirmação de Senha não correspondem.")
+    }
+
     this.registerService.create(this.register).subscribe(() => {
       this.registerService.showMessage('Usuário cadastrado!')
       this.router.navigate(['/register'])
     })
+/*
+    this.registerService.create(this.register).subscribe((response) => {
+      this.registers = response;
+      this.registerService.showMessage('Usuário cadastrado!')
+      this.router.navigate(['/register'])
+    });
+    }*/
 }
 }

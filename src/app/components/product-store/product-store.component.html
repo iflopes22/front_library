@@ -38,24 +38,36 @@
     <div class="info-container">
         <div class="info">
             <h2>Harry Potter</h2>
-            <p class="autor">J.K. Rowling <span>(Autor)</span></p>
-            <p class="preco">R$ 48,99</p>
-            <button class="comprar">Comprar</button>
+            <p class="autor"> {{ product.author }} <span>(Autor)</span></p>
+            <p class="preco">{{ product.price }}</p>
+            <button class="comprar" (clock)="buyProduct()">Comprar</button>
             <br>
-            <button class="comprar">Carrinho</button>
+            <button class="comprar" (click)="addCart">Carrinho</button>
         </div>
     </div>
     <div class="descricao">
         <!-- <hr> -->
         <h3>Descrição do Livro</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p> {{ product.description }}</p>
     </div>
     <div class="caract">
         <h3>Características</h3>
         <ul>
-            <li><span>Páginas</span> <span>300</span></li>
-            <li><span>Idioma</span> <span>Português</span></li>
-            <li><span>Ano de Lançamento</span> <span>2022</span></li>
+            <li><span>Páginas</span> <span>{{ product.pages }}</span></li>
+            <li><span>Idioma</span> <span>{{ product.language }}</span></li>
+            <li><span>Ano de Lançamento</span> <span>{{ product.year }}</span></li>
         </ul>
     </div>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+    
+    <button mat-raised-button (click)="addCart(product)">
+        Adicioanr ao Carrinho
+    </button>
+    
+    <button mat-raised-button (click)="buyProduct(product)">
+        Comprar Produto
+    </button>
 </div>

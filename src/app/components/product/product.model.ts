@@ -3,4 +3,8 @@ export interface Product {
     name: string
     description: string
     price: number
+    language: string
+    year: number
+    pages: number
+    author: string
 }
