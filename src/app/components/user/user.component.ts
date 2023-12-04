@@ -44,25 +44,28 @@ login() {
           console.log(us.email)
           console.log(this.senha)
           console.log(us.senha)
-          return
+          this.router.navigate(['products/store'])
+          this.registerService.showMessage('Login efetuado!')
           } else {
           console.log(this.senha)
           console.log(us.senha)
-          this.mensagem = "Senha incorreta";
+          this.registerService.showMessage('Senha incorreta')
           this.existeMensagem = true;
           return
           }
         } else {
-          this.mensagem = "Favor informar uma Senha";
+          this.registerService.showMessage(' ')
           this.existeMensagem = true;
           return
         }
       }
 
       if(this.existeEmail == false) {
-        this.mensagem = "Esse E-mail não existe"
+        this.registerService.showMessage('E-mail não cadastrado')
         this.existeMensagem = true;
       }
+      this.router.navigate(['products/store'])
+      this.registerService.showMessage('Login efetuado!')
   }))
 }
 

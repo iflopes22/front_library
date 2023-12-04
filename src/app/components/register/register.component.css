@@ -2,27 +2,16 @@
   text-align: center;
 }
 
-.main .form-login {
+.mat-card {
   width: 50%;
-  /*não tenho crtz se precisa*/
   margin: 0 auto;
+  text-align: left;
+  padding: 20px;
 }
 
-hr {
-  width: 50%;
-
-}
-
-label {
-  font-family: 'Open Sans', sans-serif;
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-input {
-  border: none;
-  border-bottom: 1px solid black;
-  padding: 5px;
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 button {
@@ -35,70 +24,31 @@ button {
   margin: 25px auto;
   display: block;
   transition: background-color 0.1s ease;
-  /*:active*/
 }
 
-/*da pra tirar*/
 button:active {
   background-color: #3498db;
 }
 
-/* button:hover {
-    background-color: #2980b9;
-  } */
-
-
-
 p {
   font-family: Verdana, Arial, sans-serif;
   padding: 1%;
-  margin-top: 2.5%;
+  margin-top: 8%;
 }
 
 a {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 120%;
-  /* color: #34495e; */
   text-decoration: none;
   border: 2px solid #3498db;
   border-radius: 15px;
   padding: 2px 5px;
-
-}
-
-/*só pra mudar a cor do texto do botão por conta do angular*/
-a[_ngcontent-ypy-c143] {
   color: #34495e;
 }
 
-div {
-  margin: 20px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-}
-
-
-h2 {
-  font-size: 2em;
-  font-family: "Times New Roman", Arial, sans-serif;
-  font-weight: bold;
-}
-
-.mensagem {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-}
-
 .lgpd {
-  font-size: 85%;
-  margin-top: 25px;
+  font-size: 80%;
   text-align: left;
   padding: 10px 0;
+  margin: 0px;
 }

@@ -4,10 +4,10 @@
 
 }
 
-.container {
+.container .livroContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+   
 }
 
 .info-container {

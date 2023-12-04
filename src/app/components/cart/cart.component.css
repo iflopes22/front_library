@@ -208,5 +208,9 @@ aside > button:hover {
 
 aside {
     width: 50%;
-    margin: 0 auto;   
+    margin: 20px auto;       
+}
+
+.delete > i {
+  color: #e35e6b;
 }

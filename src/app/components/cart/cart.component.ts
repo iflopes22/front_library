@@ -1,34 +1,63 @@
-import { Component, OnInit } from '@angular/core';
-import { Cart } from './cart.model';
-import { CartService } from './cart.service';
-import { ProductService } from '../product/product.service';
+import { ActivatedRoute, Router } from "@angular/router";
+import { Cart } from "./cart.model";
+import { CartService } from "./cart.service";
+import { Component, OnInit } from "@angular/core";
+import { async } from "rxjs/internal/scheduler/async";
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  selector: "app-cart",
+  templateUrl: "./cart.component.html",
+  styleUrls: ["./cart.component.css"],
+  template: '<a href="#" (click)="deleteCart(id)">Deletar</a>',
 })
-export class CartComponent {
-  carts: Cart[]
-  displayedColumns= ['id', 'name', 'price']
-  priceTotal: ''
+export class CartComponent implements OnInit {
+  carts: Cart[];
+  displayedColumns = ["id", "name", "price", "qtde", "action"];
+  total: number;
+  subTotal: null;
 
-  totalCart() {
-    this.carts.forEach(x => {
-      let priceTotal = this.carts.reduce((total, cart) => total + cart.price, 0);
-    })
-  }
-
-  constructor(private cartService: CartService) { }
+  constructor(
+    private cartService: CartService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    /*const id = +this.route.snapshot.paramMap.get("id");
-    this.cartService.read().subscribe((response) => {
-      this.carts = response;
+    this.create();
+  }
+
+  /*
+    this.productService.read().subscribe((response) => {
+      this.products = response;
     });
     }*/
-    
-    this.cartService.read().subscribe(carts => {
+  async create() {
+    this.cartService.read().subscribe((carts) => {
       this.carts = carts;
-    })
+      this.soma();
+    });
+  }
+
+  soma() {
+    console.log("oi");
+    console.log(this.carts);
+    this.total = 0;
+    let totalPrice = 0;
+    console.log(typeof(totalPrice))
+    console.log(typeof(this.total))
+    this.carts.forEach(function (cart) {
+      totalPrice += Number(cart.price);
+    });
+    this.total = totalPrice;
+  }
+
+  deleteCart(id): void {
+    this.cartService.delete(id).subscribe(() => {
+      this.cartService.showMessage("Item removido");
+    });
+    this.cartService.read().subscribe((carts) => {
+      this.carts = carts;
+      this.soma();
+    });
+  }
 }

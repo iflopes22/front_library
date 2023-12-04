@@ -1,6 +1,6 @@
 export interface Cart {
     id?: number
-    nome: string
+    name: string
     qtde: number
     price: number
 }

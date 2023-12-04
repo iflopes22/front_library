@@ -44,10 +44,10 @@ export class RegisterComponent implements OnInit {
     if(this.confSenha != this.register.senha) {
       this.registerService.showMessage("O campo Senha e confirmação de Senha não correspondem.")
     }
-
+    console.log(this.register)
     this.registerService.create(this.register).subscribe(() => {
       this.registerService.showMessage('Usuário cadastrado!')
-      this.router.navigate(['/register'])
+      this.router.navigate(['/'])
     })
 /*
     this.registerService.create(this.register).subscribe((response) => {

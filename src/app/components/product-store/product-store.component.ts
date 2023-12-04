@@ -12,7 +12,12 @@ import { ProductService } from '../product/product.service';
 })
 export class ProductStoreComponent implements OnInit {
   product: Product;
-  cartItem: Cart;
+  carts: Cart[];
+  cartItem: Cart = {
+    name: '',
+    qtde: null,
+    price: null
+  }
 
   constructor(
     private cartService: CartService,
@@ -26,8 +31,6 @@ export class ProductStoreComponent implements OnInit {
     this.productService.readById(id).subscribe((product) => {
       this.product = product;
       console.log(this.product)
-      this.productService.showMessage("Produto excluido com sucesso!");
-      this.router.navigate(["/products"]);
     });
 
 
@@ -41,7 +44,7 @@ export class ProductStoreComponent implements OnInit {
   }
 
   addCart(product: Product) {
-    this.cartItem.nome = product.name;
+    this.cartItem.name = product.name;
     this.cartItem.price = product.price;
     this.cartItem.qtde = 1;
 
@@ -57,11 +60,12 @@ export class ProductStoreComponent implements OnInit {
   }
 
 
-  buyProduct(product: Product) {
-    this.cartItem.nome = product.name;
-    this.cartItem.price = product.price;
+  buyProduct() {
+  
+    this.cartItem.name = this.product.name;
+    this.cartItem.price = this.product.price;
     this.cartItem.qtde = 1;
-
+    
     this.cartService.create(this.cartItem).subscribe(() => {
     this.cartService.showMessage('Produto adicionado ao Carrinho!')
     this.router.navigate(['/cart'])
@@ -75,6 +79,7 @@ export class ProductStoreComponent implements OnInit {
 
     })
   }
+  
 
   cancel(): void {
       this.router.navigate(["/store"]);

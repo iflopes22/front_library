@@ -1,23 +1,57 @@
-<div class="main">
+<mat-card>
+  <mat-card-title>CADASTRO</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="name" [(ngModel)]="register.name" name="name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" [(ngModel)]="register.email" name="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Confirma Email" [(ngModel)]="confEmail" name="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Senha" [(ngModel)]="register.senha" name="senha">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Confirma Senha" [(ngModel)]="confSenha" name="email">
+    </mat-form-field>
+
+  </form>
+  <P class="lgpd">Ao clicar em 'Criar Conta', você concorda com nossa política de privacidade e o uso responsável de
+    seus dados pessoais conforme a LGPD.</P>
+
+  <button type="submit" (click)="createUser()">CRIAR CONTA</button>
+
+  <p>Você já tem uma conta? <a href="http://localhost:4200/user">Fazer login</a></p>
+
+</mat-card>
+
+
+
+
+<!-- <div class="main">
   <h2>CADASTRO</h2>
- 
-  <form action="" class="form-login">
-    <label for="nome">NOME</label>
-    <input type="nome" [(ngModel)]="register.name" required placeholder="Guilherme Machado">
+
+  <form class="form-login">
+    
+    <label for="name">name</label>
+    <input [(ngModel)]="register.name" required placeholder="Guilherme Machado">
 
     <label for="email">E-mail</label>
-    <input type="email" [(ngModel)]="register.email" required placeholder="exemplo@gmail.com">
+    <input [(ngModel)]="register.email" required placeholder="exemplo@gmail.com">
 
     <label for="conf.email">Confirmar E-mail</label>
-    <input type="email" [(ngModel)]="confEmail" required placeholder="exemplo@gmail.com">
+    <input [(ngModel)]="confEmail" required placeholder="exemplo@gmail.com">
 
     <label for="senha">Senha</label>
-    <input type="senha" [(ngModel)]="register.senha" required placeholder="Insira sua senha">
+    <input [(ngModel)]="register.senha" required placeholder="Insira sua senha">
 
     <label for="conf.senha">Confirmar Senha</label>
-    <input type="conf.senha" [(ngModel)]="confSenha" required placeholder="Insira sua senha">
+    <input [(ngModel)]="confSenha" required placeholder="Insira sua senha">
 
-    <P class="lgpd">Ao clicar em 'Criar Conta', você concorda com nossa política de privacidade e o uso responsável de seus dados pessoais conforme a LGPD.</P>
+    <P class="lgpd">Ao clicar em 'Criar Conta', você concorda com nossa política de privacidade e o uso responsável de
+      seus dados pessoais conforme a LGPD.</P>
 
     <button type="submit" (click)="createUser()">CRIAR CONTA</button>
 
@@ -25,5 +59,5 @@
   </form>
   <p>Você já tem uma conta? <a href="http://localhost:4200/user">Fazer login</a></p>
 
-  <!-- <div class="mensagem" NgIf="existeMensagem">   <p>{{ mensagem }}</p> </div> -->
-</div>
+  
+</div> -->
