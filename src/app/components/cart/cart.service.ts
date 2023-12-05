@@ -23,21 +23,21 @@ export class CartService {
   }
 
   create(cart: Cart): Observable<Cart> {
-    return this.http.post<Cart>(this.baseUrl, cart).pipe(
+    return this.http.post<Cart>(this.baseUrl + "/save", cart).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
   read(): Observable<Cart[]> {
-    return this.http.get<Cart[]>(this.baseUrl).pipe(
+    return this.http.get<Cart[]>(this.baseUrl + "/getAll").pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
   readById(id: number): Observable<Cart> {
-    const url = `${this.baseUrl}/${id}`;
+    const url = `${this.baseUrl}/getById/${id}`;
     return this.http.get<Cart>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -45,7 +45,7 @@ export class CartService {
   }
 
   update(cart: Cart): Observable<Cart> {
-    const url = `${this.baseUrl}/${cart.id}`;
+    const url = `${this.baseUrl}/update/${cart.id}`;
     return this.http.put<Cart>(url, cart).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -53,7 +53,7 @@ export class CartService {
   }
 
   delete(id: number): Observable<Cart> {
-    const url = `${this.baseUrl}/${id}`;
+    const url = `${this.baseUrl}/delete/${id}`;
     return this.http.delete<Cart>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
